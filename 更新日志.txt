@@ -25,3 +25,23 @@ javax.* 的包名都需要替换成为 jakarta.*。改动较大。
 升级到springCloud工程，引入springCloud父依赖包
 注意:添加spring-cloud依赖时，需要根据springboot版本来选择对应的spring-cloud版本
 否则会导致包版本冲突的问题
+
+2024/6/5
+升级spring-cloud-alibaba-dependencies至和spring-boot-starter-parent的2.7.18版本兼容的2021.0.5版本
+降低spring-cloud-dependencies至和spring-cloud-alibaba-dependencies兼容的2021.0.5.0版本
+原因:
+spring-cloud-alibaba-dependencies的2021.1版本和spring-boot-starter-parent的2.7.18版本不兼容。
+使用spring-cloud-starter-alibaba-sentinel时会提示和spring-boot-starter-web的Bean对象发生循环依赖。
+
+spring-cloud-alibaba和spring-cloud和spring-boot版本的对应关系如下:
+Spring Cloud Alibaba Version    Spring Cloud Version	Spring Boot Version
+2021.0.5.0*                     Spring Cloud 2021.0.5   2.6.13
+2021.0.4.0                      Spring Cloud 2021.0.4   2.6.11
+2021.0.1.0                      Spring Cloud 2021.0.1   2.6.3
+2021.1                          Spring Cloud 2020.0.1   2.4.2
+spring-cloud和spring-boot版本的对应关系如下:
+Spring Cloud Version            Spring Boot Version
+2023.0.x                        3.2.x
+2022.0.x                        3.0.x, 3.1.x (Starting with 2022.0.3)
+2021.0.x                        2.6.x, 2.7.x (Starting with 2021.0.3)
+2020.0.x                        2.4.x, 2.5.x (Starting with 2020.0.3)
